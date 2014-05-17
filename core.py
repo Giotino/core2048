@@ -38,13 +38,17 @@ class game_istance(object):
                     self.lost = True
     
     def setcell(self, row, col, num):
-        self.grid[row][col] = num
+        self.grid[row][col] = self.serie[num]
             
     def freecells(self, grid):
-        return self.search(grid, 0, -1)
+        return self.search(grid, -1, -1)
             
     def search(self, grid, num, many):
         found = []
+        if num == -1:
+            num = 0
+        else:
+            num = self.serie[num]
         for nrow, row in enumerate(grid):
             if many == 0:
                 break
@@ -57,6 +61,8 @@ class game_istance(object):
         return found
                         
     def move(self, direct):
+        self.old_grids.append(self.grid)
+        
         if direct == self.direct_name[0]:
             self.grid = self.move_updown(False)
         elif direct == self.direct_name[1]:
