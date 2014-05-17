@@ -10,7 +10,7 @@ The function of the class are:
 - freecells(grid) - Return array of coordinates of the blank cells of grid
 - search(grid, num, many) - Return array[many] of coordinates of the cells that contain serie[num] value
 - move(direct) - Move the tiles to 'direct' direction, direct take only value that are into serie[]
-- sim_move(direct) - Same function of move(direct) but this doesn't affect the game_instance.grid, it return the new grid
+- sim_move(direct) - Same function of move(direct) but this doesn't affect the game_instance.grid, it returns the new grid
 
 The global variables of the class are:
 - grid - Contains the grid
